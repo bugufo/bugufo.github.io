@@ -1,0 +1,288 @@
+
+
+body, html {
+    background-color: black;
+    height:100vh;
+    width:100vw;
+    margin: 0;
+
+    
+}
+
+
+
+.container {
+    display:grid;
+    height:100vh;
+}
+
+.banner {
+    font-size:1.4rem;
+}
+
+
+.column_container {
+    display:grid;
+
+
+ 
+    background-size: cover;
+
+    /*background-size: 100% 100%;*/
+    background-repeat:no-repeat;
+    background-position:center;
+    /*object-fit: cover;
+    height: 100vh;
+    */
+    
+
+    grid-template-columns: 0.157377049180328fr 0.772950819672131fr 0.307377049180328fr;
+}
+
+
+.logo {
+    margin-left: 1rem;
+    font-size:1.1vmax;
+}
+
+.getpaidtodebug {
+    padding-right: min(5px, 100%);
+   
+}
+
+.toprightbutton {
+    font-size:1.6vmin;
+
+}
+.alien {
+    color: #07FF9F;
+}
+
+
+
+.row_container {
+    display:grid;
+    grid-template-rows: 0.5fr, 0.5fr;
+    height:50vmax;
+    width:40vmax;
+    text-align: left;
+
+    position:relative;
+    left:-6vh;
+
+
+}
+
+#needsomeone {
+    font-size:1.6vmax;
+}
+
+.needsomeonerow {
+    /*border: solid;
+    border-color: white;*/
+
+}
+
+div #row {
+    border: solid;
+    border-color: white;
+   
+}
+
+
+div #ufo {
+    background-image: url('ufo.jpg');
+    
+    background-size: cover;
+ 
+
+    /*background-size: 100% 100%;*/
+    background-repeat:no-repeat;
+    background-position:center;
+
+    display: block;
+    
+    /*width: 100%;
+    height: 100vh;*/
+
+   /*height: 100vh;*/
+}
+
+div #bug {
+    display: block;
+    height: 50vh;
+    text-align: center;
+}
+
+
+
+div #firstprogrammer {
+    display: inline-block;
+    height: 20vh;
+    text-align: center;
+    font-size: 1.8vmin;
+    color: #D5D5D5;
+
+}
+
+div #northstar {
+    display: inline-block;
+    height: 60vh;
+    text-align: center;
+}
+
+div #invite {
+    height: 20vh;
+    text-align: center;
+    
+}
+
+
+
+.iwant {
+    font-size: 2vh;
+    width: 36.2vh;
+    height: 2.9vh;
+    background: #1b1b1b;
+
+    box-shadow: 0 2px 300px 3px rgba(0,0,0,0.35);
+    border-radius: 13px;
+    padding:15px;
+}
+
+
+.inviteform {
+
+    display: inline-block;
+    text-align: left;
+    position: relative;
+
+    
+}
+
+div #footer {
+    display: inline-block;
+    height: 20vh;
+    text-align: center;
+}
+
+.since4079 {
+    width:7vmax;
+    width:13vmin;
+}
+
+.bugerror {
+    /*opacity:0.7;*/
+    /*transition: 0.3s;*/
+ 
+    width: 70.74vh;
+    height: 64.4vh;
+    
+    
+    /*background: #090909;*/
+    display:inline-block;
+    box-shadow: 0 2px 300px 3px rgba(0,0,0,0.35); 
+    border-radius: 26px;
+
+    
+}
+
+.dragonfly {
+    width: 90.74vh;
+    height: 64.4vh;
+    display:inline-block;
+    text-align: center;
+
+
+}
+
+
+.bugerror:hover {
+    /*
+    opacity:1;
+ 
+    width: 70.74vh;
+    height: 64.4vh;
+    
+    
+    /*background: #090909;
+    display:inline-block;
+    box-shadow: 0 2px 300px 3px rgba(0,0,0,0.35); 
+    border-radius: 26px;
+    */
+
+}
+
+div #column {
+    /*border: solid;
+    border-color: white;*/
+    margin-top: 2.5vh;
+    min-width: 10vh;
+    text-align: center;
+}
+
+.michroma {
+    font-family: 'Michroma', sans-serif;
+}
+
+.ulagadi {
+    font-family: 'UlagadiSansRegular';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 0.8rem;
+ }
+
+p {
+    color: white;
+}
+
+nav {
+    color: white;
+}
+
+div {
+    color: white;
+}
+
+.fadeinanimation {
+    animation: fadein 3s forwards;
+    animation-timing-function: ease-in-out forwards; 
+    -moz-animation: fadein 3s forwards; /* Firefox */
+    -webkit-animation: fadein 3s forwards; /* Safari and Chrome */
+    -o-animation: fadein 3s forwards; /* Opera */
+    
+}
+
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
