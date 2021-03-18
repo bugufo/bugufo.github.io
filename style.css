@@ -187,13 +187,42 @@ div #footer {
     
 }
 
+input.border-radius {
+    border-radius:0px;
+    border-color:#07FF9F;
+}
+
+.buttonfade {
+    opacity:0.7;
+    transition:0.6s;
+}
+
+.buttonfade:hover {
+    opacity:1;
+}
+
 .dragonfly {
-    width: 90.74vh;
+    width: 90.74vmin;
+    max-width:90.74vmax;
     height: 64.4vh;
     display:inline-block;
     text-align: center;
 
 
+}
+
+.entryoverride {
+    border-width:0;
+}
+
+
+
+.sib-form {
+    display:inline-block;
+    text-align: center;
+    background-color: black;
+    width: 80vmin;
+  
 }
 
 
@@ -225,8 +254,9 @@ div #column {
     font-family: 'Michroma', sans-serif;
 }
 
+
 .ulagadi {
-    font-family: 'UlagadiSansRegular';
+    font-family: 'UlagadiSansRegular', 'Helvetica', 'Arial', sans-serif;
     font-weight: normal;
     font-style: normal;
     font-size: 0.8rem;
