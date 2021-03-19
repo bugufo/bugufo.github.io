@@ -242,6 +242,15 @@ input.border-radius {
 
 }
 
+
+
+.one-edge-shadow {
+	/*-webkit-box-shadow: inset 0 -80px 60px 7px black;
+	-moz-box-shadow: inset 0 -80px 60px 7px black;*/
+    box-shadow: inset 0 -120px 100px -90px rgba(0, 0, 0, 0.9);
+
+}
+
 div #column {
     /*border: solid;
     border-color: white;*/
