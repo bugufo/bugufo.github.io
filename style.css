@@ -40,9 +40,31 @@ body, html {
 }
 
 
+
+
+.column_container_developers {
+    display:grid;
+
+
+ 
+    background-size: cover;
+
+    /*background-size: 100% 100%;*/
+    background-repeat:no-repeat;
+    background-position:center;
+    /*object-fit: cover;
+    height: 100vh;
+    */
+    
+
+    grid-template-columns: 0.157377049180328fr 0.772950819672131fr 0.407377049180328fr;
+}
+
+
 .logo {
     margin-left: 1rem;
     font-size:1.1vmax;
+
 }
 
 .getpaidtodebug {
@@ -50,9 +72,27 @@ body, html {
    
 }
 
-.toprightbutton {
-    font-size:1.6vmin;
+.needsomeonetodebugbutton {
 
+    padding-right: min(5px, 100%);
+
+}
+
+.toprightbutton {
+    font-size:0.7rem;
+    
+
+}
+
+
+
+
+topright {
+    color:white;
+}
+topright:hover{
+    color: white;
+    opacity: 0.7;
 }
 .alien {
     color: #07FF9F;
@@ -71,6 +111,18 @@ body, html {
     left:-6vh;
 
 
+}
+
+.row_container_developers {
+    display:grid;
+    grid-template-rows: 0.5fr, 0.5fr;
+    height:50vmax;
+    width:40vmax;
+    text-align: left;
+
+    position:relative;
+    left:-5.4vh;
+    bottom:15vmax;
 }
 
 #needsomeone {
@@ -92,6 +144,25 @@ div #row {
 
 div #ufo {
     background-image: url('ufo.jpg');
+    
+    background-size: cover;
+ 
+
+    /*background-size: 100% 100%;*/
+    background-repeat:no-repeat;
+    background-position:center;
+
+    display: block;
+    
+    /*width: 100%;
+    height: 100vh;*/
+
+   /*height: 100vh;*/
+}
+
+
+div #ufo_interior {
+    background-image: url('ufointerior.jpg');
     
     background-size: cover;
  
@@ -203,8 +274,10 @@ input.border-radius {
 
 .dragonfly {
     width: 90.74vmin;
-    max-width:90.74vmax;
-    height: 64.4vh;
+    min-width:90.74vmin;
+    /*max-width:90.74vmax;*/
+
+    height: 84.4vh;
     display:inline-block;
     text-align: center;
 

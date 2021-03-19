@@ -2404,6 +2404,11 @@
  
 }
 
+.input:hover {
+	opacity:0.5;
+	transition:0.4s;
+}
+
 .input--multiselect {
 	position: relative;
 	padding-right: 32px;
