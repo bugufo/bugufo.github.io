@@ -2184,8 +2184,12 @@
 	line-height: 1.5em;
 	cursor: pointer;
 	padding: 4px 16px;
-	color:black;
+
 	overflow: hidden
+}
+
+option {
+	color: rgb(44, 44, 44);
 }
 
 .sib-menu__item:hover {
