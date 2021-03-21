@@ -9,7 +9,18 @@ body, html {
     
 }
 
+#haha {
+    display: block;
+    width: 60vmin;
+    min-width: 50vh;
 
+
+margin-left: auto;
+
+
+margin-right: auto;
+margin-top: auto;
+}
 
 .container {
     display:grid;
