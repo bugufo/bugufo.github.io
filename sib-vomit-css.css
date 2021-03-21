@@ -2189,10 +2189,6 @@
 }
 
 
-.sib-form .sib-select .form__entry .entry__field .input .sib-menu__item option {
-	color: rgb(44, 44, 44);
-}
-
 
 .sib-menu__item:hover {
 	background-color: #8ed8fd
