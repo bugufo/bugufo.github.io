@@ -7,7 +7,7 @@
 
 .pika-single {
 	z-index: 9999;
-	display: block;
+	display: block; 
 	position: relative;
 	color: #333;
 	background: #fff;
@@ -2184,6 +2184,7 @@
 	line-height: 1.5em;
 	cursor: pointer;
 	padding: 4px 16px;
+	color:black;
 	overflow: hidden
 }
 
