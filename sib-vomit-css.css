@@ -2188,7 +2188,8 @@
 	overflow: hidden
 }
 
-option {
+
+option .sib-menu__item {
 	color: rgb(44, 44, 44);
 }
 
