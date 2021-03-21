@@ -9,18 +9,7 @@ body, html {
     
 }
 
-#haha {
-    display: block;
-    width: 60vmin;
-    min-width: 50vh;
 
-
-margin-left: auto;
-
-
-margin-right: auto;
-margin-top: auto;
-}
 
 .container {
     display:grid;
@@ -75,6 +64,7 @@ margin-top: auto;
 .logo {
     margin-left: 1rem;
     font-size:1.1vmax;
+    color:white;
 
 }
 
@@ -96,6 +86,18 @@ margin-top: auto;
 }
 
 
+#haha {
+    display: block;
+    width: 60vmin;
+    min-width: 50vh;
+
+
+margin-left: auto;
+
+
+margin-right: auto;
+margin-top: auto;
+}
 
 
 topright {
@@ -138,6 +140,7 @@ topright:hover{
 
 #needsomeone {
     font-size:1.6vmax;
+    color:white;
 }
 
 .needsomeonerow {
@@ -355,6 +358,15 @@ div #column {
     font-size: 0.8rem;
  }
 
+canvas {
+
+    left: 48%;
+    top:50%;
+    transform: translate(15%, -40%);
+    max-height: 65vh;
+    max-width: 65vw;
+}
+
 p {
     color: white;
 }
@@ -364,7 +376,7 @@ nav {
 }
 
 div {
-    color: white;
+    color: rgb(110, 110, 110);
 }
 
 .fadeinanimation {
