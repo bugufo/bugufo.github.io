@@ -375,8 +375,29 @@ nav {
     color: white;
 }
 
-div {
-    color: rgb(110, 110, 110);
+
+div #invite .sib-form .sib-select .entry__field .input {
+    /*color: rgb(110, 110, 110);*/
+    color:white;
+    font-family: 'UlagadiSansRegular', 'Helvetica', 'Arial', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+div #invite .sib-form .sib-select .entry__field .input .sib-menu__item {
+    /*color: rgb(110, 110, 110);*/
+    color:rgb(0, 134, 78);
+    font-family: 'UlagadiSansRegular', 'Helvetica', 'Arial', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+div #invite .sib-form .sib-input .entry__field .input {
+    /*color: rgb(110, 110, 110);*/
+    color:white;
+    font-family: 'UlagadiSansRegular', 'Helvetica', 'Arial', sans-serif;
+    font-weight: normal;
+    font-style: normal;
 }
 
 .fadeinanimation {
