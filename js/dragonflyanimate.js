@@ -104,16 +104,16 @@ const currentFrame = index => (
 const frameCount = 75;
 canvas.height = 600;
 canvas.width = 600;
-const dragonflyImage = new Image();
-dragonflyImage.src = currentFrame(0);
-dragonflyImage.onload = function(){
-    context.drawImage(dragonflyImage, 0, 0)
+const dragonflyAnimationImage = new Image();
+dragonflyAnimationImage.src = currentFrame(0);
+dragonflyAnimationImage.onload = function(){
+    context.drawImage(dragonflyAnimationImage, 0, 0)
 };
 
 
 const updateImage = index => {
-    dragonflyImage.src = currentFrame(index);
-    context.drawImage(dragonflyImage, 0, 0);
+    dragonflyAnimationImage.src = currentFrame(index);
+    context.drawImage(dragonflyAnimationImage, 0, 0);
 };
 
 window.addEventListener('scroll', () => {
