@@ -82,7 +82,7 @@ function preloadImages(e) {
     "dragonfly/dragonflyanimation0001_00073.jpg",
     "dragonfly/dragonflyanimation0001_00074.jpg");
  
-    for (const i = 0; i < imageArray.length; i++) {
+    for (let i = 0; i < imageArray.length; i++) {
         const tempImage = new Image();
         tempImage.src = imageArray[i];
     };
