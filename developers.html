@@ -1,28 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:image" content="ufointerior.jpg">
-    <meta property="og:description" content="Can you fix code fast? Get paid to debug it.">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta property="og:image" content="ufo.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <!--Referral link-->
+    <script>
+      var queryForm = function(settings){
+        var reset = settings && settings.reset ? settings.reset : false;
+        var self = window.location.toString();
+        var querystring = self.split("?");
+        if (querystring.length > 1) {
+          var pairs = querystring[1].split("&");
+          for (i in pairs) {
+            var keyval = pairs[i].split("=");
+            if (reset || sessionStorage.getItem(keyval[0]) === null) {
+              sessionStorage.setItem(keyval[0], decodeURIComponent(keyval[1]));
+            }
+          }
+        }
+        var hiddenFields = document.querySelectorAll("input[type=hidden], input[type=text]");
+        for (var i=0; i<hiddenFields.length; i++) {
+          var param = sessionStorage.getItem(hiddenFields[i].name);
+          if (param) document.getElementsByName(hiddenFields[i].name)[0].value = param;
+        }
+      }
     
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
+      setTimeout(function(){queryForm();}, 3000);
+    </script>
+
     
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+  
+<script src="js/formrequiredfields.js"></script>
+
+<!--Repeatedly check inputs of form-->
+<script>
+ function repeatedlyCheckInputsOfForm() {
+ setInterval(function() {  
+   AreThereEmptyRequiredFields(); }, 100);
+ };
+ </script>
+
+  
+   
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/ulagadi-sans" type="text/css"/>
 
-    <script src="getforminfo.js"></script>
+    <link rel="preload" href="ufointerior.png" as="image">
+    <meta property="og:image" content="css/images/ufo.jpg" />
+    <!-- load images in order -->
+    <script>$(function () {
+      var $images = $('img');
+      var lastLoadIndex = 0;
+      var loadNextImage = function () {
+         if ($images.length === lastLoadIndex) {
+             return;
+         }
+   console.log('loading image at index ' + lastLoadIndex);
+         $images.eq(lastLoadIndex).attr('src', $images.eq(lastLoadIndex).attr('data-src'));
+         lastLoadIndex += 1;
+      };
+      $images.on('load', loadNextImage);
+      loadNextImage();
+   });</script>
+    <script src="js/getforminfo.js"></script>
 
    <!-- Begin Sendinblue Form -->
 <!-- START - We recommend to place the below code in head tag of your website html  -->
@@ -66,7 +116,7 @@
     }
   </style>
 
- <link rel="stylesheet" href="sib-vomit-css.css">
+ <link rel="stylesheet" href="css/sib-vomit-css.css">
   <!--  END - We recommend to place the above code in head tag of your website html -->
   
   
@@ -76,7 +126,14 @@
 </head>
 <body style="background-color: black;">
     <div class="container">
-        <!--Can you find the bug on this page? contact@bugufo.com
+        <!--Navbar:
+        
+        <nav>
+            <ul>
+                <li class="michroma"></li>
+                <li class="navbar"></li>
+            </ul>
+        </nav>
         -->
 
         
@@ -175,618 +232,241 @@
             
         <div id="invite">
             <!-- START - We recommend to place the below code where you want the form in your website html  -->
-<div class="sib-form" style="text-align: center;
-background-color: #000000;                                 ">
-<div id="sib-form-container" class="sib-form-container" >
-<div id="error-message" class="sib-form-message-panel" style="font-size:14px; text-align:left; font-family: Michroma, UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:rgb(20,20,20); border-radius:12px; border-color:#ff4949;max-width:540px;">
-<div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-<svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
- <path d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z"
- />
-</svg>
-<span class="sib-form-message-panel__inner-text">
-                 Your subscription could not be saved. Please try again.
-             </span>
-</div>
-</div>
-<div></div>
-<div id="success-message" class="sib-form-message-panel" style="font-size:14px; text-align:left; font-family:Michroma, UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#085229; background-color:rgb(20, 20, 20); border-radius:12px; border-color:#13ce66;max-width:540px;">
-<div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-<svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
- <path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z"
- />
-</svg>
-<span class="sib-form-message-panel__inner-text">
-                 Almost there. Please verify your email.
-             </span>
-</div>
-</div>
-<div></div>
-<div id="sib-container" class="sib-container--large sib-container--vertical" style="text-align:center; background-color:#090909; max-width:540px; border-radius:17px; ">
-<form id="sib-form" method="POST" action="https://2cc2e2bc.sibforms.com/serve/MUIEAN3R7k0jrqinMNO795EXhZASj4F_XVsMDFiESBE3AXq5CLn8BZzK2NbFzB7qQ4ve4-_bBr01G9lVOdWPdsVVRL2YlfAS6LmCHO-WCZV4rhlRpvz25JzHt1CLwh8rybFoR5EVMh-_6_wK_XVIaODzHCHH0yQHG_ALe8oXBSMIvXXIMleoOPvaNA6y9Z9ZQ7eu0k_2_-Md0Apy"
-data-type="subscription">
-<div style="padding: 8px 0;">
- <div class="sib-form-block" style="font-size:21px; text-align:left; font-weight:700; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#d3d3d3; background-color:transparent; ">
-   <p>Request Invite</p>
- </div>
-</div>
-<div style="padding: 8px 0;">
- <div class="sib-select sib-form-block" data-required="true">
-   <div class="form__entry entry_block">
-     <div class="form__label-row ">
-       <label class="entry__label" style="font-size:14px; text-align:left; font-weight:700; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#999999;" for="USER_OR_DEVELOPER_OR_BOTH" data-required="*">
-         I want:
-       </label>
-       <div class="entry__field">
-         <select class="input" id="USER_OR_DEVELOPER_OR_BOTH" name="USER_OR_DEVELOPER_OR_BOTH" data-required="true">
-           <option value="" disabled selected hidden>Select one</option>
-
-           <option class="sib-menu__item" value="1">
-             want my code debugged
-           </option>
-           <option class="sib-menu__item" value="2">
-             want to get paid to debug
-           </option>
-           <option class="sib-menu__item" value="3">
-             both
-           </option>
-         </select>
-       </div>
-     </div>
-     <label class="entry__error entry__error--primary" style="font-size:14px; text-align:left; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
-     </label>
-   </div>
- </div>
-</div>
-
-<div style="padding: 8px 0;">
-    <br>
-
- <div class="sib-input sib-form-block">
-   <div class="form__entry entry_block">
-     <div class="form__label-row ">
-       <label class="entry__label" style="font-size:14px; text-align:left; font-weight:700; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#999999;" for="PROGRAMMING_LANGUAGES" data-required="*">
-         Programming languages I most often use:
-       </label>
-
-       <div class="entry__field">
-         <input class="input" maxlength="200" type="text" id="PROGRAMMING_LANGUAGES" name="PROGRAMMING_LANGUAGES" autocomplete="off" placeholder="Python, Javascript, etc." data-required="true" required />
-       </div>
-     </div>
-
-     <label class="entry__error entry__error--primary" style="font-size:14px; text-align:left; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
-     </label>
-     <label class="entry__specification" style="font-size:12px; text-align:left; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#363636;">
-       Must be comma-separated list (e.g. Python, Javascript, Haskell)
-     </label>
-     <br>
-     <br>
-   </div>
- </div>
-</div>
-<div style="padding: 8px 0;">
- <div class="sib-input sib-form-block">
-   <div class="form__entry entry_block">
-     <div class="form__label-row ">
-       <label class="entry__label" style="font-size:14px; text-align:left; font-weight:700; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#999999;" for="IDEAL_EXPERIENCE">
-         Describe your ideal experience on this site (Optional)
-       </label>
-
-       <div class="entry__field">
-         <textarea rows="2" class="input" maxlength="500" id="IDEAL_EXPERIENCE" name="IDEAL_EXPERIENCE" autocomplete="off" placeholder="I&#039;d be most interested in..."></textarea>
-       </div>
-     </div>
-
-     <label class="entry__error entry__error--primary" style="font-size:14px; text-align:left; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
-     </label>
-     <label class="entry__specification" style="font-size:12px; text-align:left; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#363636;">
-       (e.g. turn-around time, average budget, anticipated bug size, code quality, code comments, etc.)
-     </label>
-     <br> <br> <br>
-   </div>
- </div>
-</div>
-<div style="padding: 8px 0;">
- <div class="sib-select sib-form-block">
-   <div class="form__entry entry_block">
-     <div class="form__label-row ">
-       <label class="entry__label" style="font-size:14px; text-align:left; font-weight:700; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#999999;" for="WILLING_TO_PAY">
-         If you want your code debugged: On average, I&#039;m willing to pay $___ for someone to debug a project with ____ lines of code and I&#039;d like it done in at most ___ (amount of time). (Optional)
-       </label>
-       <div class="entry__field">
-         <select class="input" id="WILLING_TO_PAY" name="WILLING_TO_PAY">
-           <option value="" disabled selected hidden>Select one</option>
-
-           <option class="sib-menu__item" value="1">
-             $1
-           </option>
-           <option class="sib-menu__item" value="2">
-             $5
-           </option>
-           <option class="sib-menu__item" value="3">
-             $10
-           </option>
-           <option class="sib-menu__item" value="4">
-             $20
-           </option>
-           <option class="sib-menu__item" value="5">
-             $50
-           </option>
-           <option class="sib-menu__item" value="6">
-             $100
-           </option>
-           <option class="sib-menu__item" value="7">
-             $250
-           </option>
-           <option class="sib-menu__item" value="8">
-             $500
-           </option>
-           <option class="sib-menu__item" value="9">
-             $1,000
-           </option>
-           <option class="sib-menu__item" value="10">
-             $5,000
-           </option>
-           <option class="sib-menu__item" value="11">
-             $10,000
-           </option>
-           <option class="sib-menu__item" value="12">
-             $25,000
-           </option>
-           <option class="sib-menu__item" value="15">
-             $50,000
-           </option>
-           <option class="sib-menu__item" value="16">
-             $100,000+
-           </option>
-         </select>
-       </div>
-     </div>
-     <label class="entry__error entry__error--primary" style="font-size:14px; text-align:left; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
-     </label>
-     <label class="entry__specification" style="font-size:12px; text-align:left; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#363636;">
-       (e.g. $20)
-     </label>
-   </div>
- </div>
-</div>
-<div style="padding: 8px 0;">
- <div class="sib-select sib-form-block">
-   <div class="form__entry entry_block">
-     <div class="form__label-row ">
-       <div class="entry__field">
-         <select class="input" id="LINES_OF_CODE" name="LINES_OF_CODE">
-           <option value="" disabled selected hidden>Select one</option>
-
-           <option class="sib-menu__item" value="1">
-             20 lines or less
-           </option>
-           <option class="sib-menu__item" value="2">
-             50 lines or less
-           </option>
-           <option class="sib-menu__item" value="3">
-             100 lines or less
-           </option>
-           <option class="sib-menu__item" value="4">
-             500 lines or less
-           </option>
-           <option class="sib-menu__item" value="5">
-             1,000 lines or less
-           </option>
-           <option class="sib-menu__item" value="6">
-             10,000 lines or less
-           </option>
-           <option class="sib-menu__item" value="7">
-             100,000 lines or less
-           </option>
-           <option class="sib-menu__item" value="8">
-             1,000,000 lines or less
-           </option>
-           <option class="sib-menu__item" value="9">
-             10,000,000+ lines or less
-           </option>
-         </select>
-       </div>
-     </div>
-     <label class="entry__error entry__error--primary" style="font-size:14px; text-align:left; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
-     </label>
-     <label class="entry__specification" style="font-size:12px; text-align:left; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#363636;">
-       (e.g. 200 lines of code)
-     </label>
-   </div>
- </div>
-</div>
-<div style="padding: 8px 0;">
- <div class="sib-select sib-form-block">
-   <div class="form__entry entry_block">
-     <div class="form__label-row ">
-       <div class="entry__field">
-         <select class="input" id="ACCEPTABLE_TURNAROUND_TIME" name="ACCEPTABLE_TURNAROUND_TIME">
-           <option value="" disabled selected hidden>Select one</option>
-
-           <option class="sib-menu__item" value="1">
-             5 minutes or less
-           </option>
-           <option class="sib-menu__item" value="2">
-             10 minutes
-           </option>
-           <option class="sib-menu__item" value="3">
-             30 minutes
-           </option>
-           <option class="sib-menu__item" value="4">
-             1 hour
-           </option>
-           <option class="sib-menu__item" value="5">
-             2 hours
-           </option>
-           <option class="sib-menu__item" value="6">
-             3 hours
-           </option>
-           <option class="sib-menu__item" value="7">
-             4 hours
-           </option>
-           <option class="sib-menu__item" value="8">
-             5 hours
-           </option>
-           <option class="sib-menu__item" value="9">
-             6 hours
-           </option>
-           <option class="sib-menu__item" value="10">
-             7 hours
-           </option>
-           <option class="sib-menu__item" value="11">
-             8 hours
-           </option>
-           <option class="sib-menu__item" value="12">
-             9 hours
-           </option>
-           <option class="sib-menu__item" value="13">
-             10 hours
-           </option>
-           <option class="sib-menu__item" value="14">
-             11 hours
-           </option>
-           <option class="sib-menu__item" value="15">
-             12 hours
-           </option>
-           <option class="sib-menu__item" value="16">
-             1 day
-           </option>
-           <option class="sib-menu__item" value="17">
-             2 days
-           </option>
-           <option class="sib-menu__item" value="18">
-             3 days
-           </option>
-           <option class="sib-menu__item" value="19">
-             4 days
-           </option>
-           <option class="sib-menu__item" value="20">
-             5 days
-           </option>
-           <option class="sib-menu__item" value="21">
-             6 days
-           </option>
-           <option class="sib-menu__item" value="22">
-             1 week
-           </option>
-           <option class="sib-menu__item" value="23">
-             2 weeks
-           </option>
-           <option class="sib-menu__item" value="24">
-             3 weeks
-           </option>
-           <option class="sib-menu__item" value="25">
-             1 month
-           </option>
-         </select>
-       </div>
-     </div>
-     <label class="entry__error entry__error--primary" style="font-size:14px; text-align:left; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
-     </label>
-     <label class="entry__specification" style="font-size:12px; text-align:left; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#363636;">
-       (e.g. 3 hours)
-     </label> 
-     <br> <br><br>
-   </div>
- </div>
-</div>
-<div style="padding: 8px 0;">
- <div class="sib-select sib-form-block">
-   <div class="form__entry entry_block">
-     <div class="form__label-row ">
-       <label class="entry__label" style="font-size:14px; text-align:left; font-weight:700; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#999999;" for="DESIRABLE_SALARY">
-         If you want to get paid to debug code: On average, I&#039;d like to make about $___ to debug a project with ___ lines of code and spend about ___ (amount of time) doing it. (Optional)
-       </label>
-       <div class="entry__field">
-         <select class="input" id="DESIRABLE_SALARY" name="DESIRABLE_SALARY">
-           <option value="" disabled selected hidden>Select one</option>
-
-           <option class="sib-menu__item" value="1">
-             $10
-           </option>
-           <option class="sib-menu__item" value="2">
-             $20
-           </option>
-           <option class="sib-menu__item" value="3">
-             $30
-           </option>
-           <option class="sib-menu__item" value="4">
-             $40
-           </option>
-           <option class="sib-menu__item" value="5">
-             $50
-           </option>
-           <option class="sib-menu__item" value="6">
-             $60
-           </option>
-           <option class="sib-menu__item" value="7">
-             $70
-           </option>
-           <option class="sib-menu__item" value="8">
-             $80
-           </option>
-           <option class="sib-menu__item" value="9">
-             $90
-           </option>
-           <option class="sib-menu__item" value="10">
-             $100
-           </option>
-           <option class="sib-menu__item" value="11">
-             $150
-           </option>
-           <option class="sib-menu__item" value="12">
-             $200
-           </option>
-           <option class="sib-menu__item" value="13">
-             $500
-           </option>
-           <option class="sib-menu__item" value="14">
-             $1000+
-           </option>
-         </select>
-       </div>
-     </div>
-     <label class="entry__error entry__error--primary" style="font-size:14px; text-align:left; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
-     </label>
-     <label class="entry__specification" style="font-size:12px; text-align:left; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#363636;">
-       (e.g. $30)
-     </label>
-   </div>
- </div>
-</div>
-<div style="padding: 8px 0;">
- <div class="sib-select sib-form-block">
-   <div class="form__entry entry_block">
-     <div class="form__label-row ">
-       <div class="entry__field">
-         <select class="input" id="DEVELOPER_LINES_OF_CODE" name="DEVELOPER_LINES_OF_CODE">
-           <option value="" disabled selected hidden>Select one</option>
-
-           <option class="sib-menu__item" value="1">
-             20 lines or less
-           </option>
-           <option class="sib-menu__item" value="2">
-             50 lines or less
-           </option>
-           <option class="sib-menu__item" value="3">
-             100 lines or less
-           </option>
-           <option class="sib-menu__item" value="4">
-             500 lines or less
-           </option>
-           <option class="sib-menu__item" value="5">
-             1,000 lines or less
-           </option>
-           <option class="sib-menu__item" value="6">
-             10,000 lines or less
-           </option>
-           <option class="sib-menu__item" value="7">
-             100,000 lines or less
-           </option>
-           <option class="sib-menu__item" value="8">
-             1,000,000 lines or less
-           </option>
-           <option class="sib-menu__item" value="9">
-             10,000,000+ lines
-           </option>
-         </select>
-       </div>
-     </div>
-     <label class="entry__error entry__error--primary" style="font-size:14px; text-align:left; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
-     </label>
-     <label class="entry__specification" style="font-size:12px; text-align:left; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#363636;">
-       (e.g. 300 lines of code)
-     </label>
-   </div>
- </div>
-</div>
-<div style="padding: 8px 0;">
- <div class="sib-select sib-form-block">
-   <div class="form__entry entry_block">
-     <div class="form__label-row ">
-       <div class="entry__field">
-         <select class="input" id="WORKING_HOURS" name="WORKING_HOURS">
-           <option value="" disabled selected hidden>Select one</option>
-
-           <option class="sib-menu__item" value="1">
-             5 minutes
-           </option>
-           <option class="sib-menu__item" value="2">
-             10 minutes
-           </option>
-           <option class="sib-menu__item" value="3">
-             30 minutes
-           </option>
-           <option class="sib-menu__item" value="4">
-             1 hour
-           </option>
-           <option class="sib-menu__item" value="5">
-             2 hours
-           </option>
-           <option class="sib-menu__item" value="6">
-             3 hours
-           </option>
-           <option class="sib-menu__item" value="7">
-             4 hours
-           </option>
-           <option class="sib-menu__item" value="8">
-             5 hours
-           </option>
-           <option class="sib-menu__item" value="9">
-             6 hours
-           </option>
-           <option class="sib-menu__item" value="10">
-             7 hours
-           </option>
-           <option class="sib-menu__item" value="11">
-             8 hours
-           </option>
-           <option class="sib-menu__item" value="12">
-             9 hours
-           </option>
-           <option class="sib-menu__item" value="13">
-             10 hours
-           </option>
-           <option class="sib-menu__item" value="14">
-             11 hours
-           </option>
-           <option class="sib-menu__item" value="15">
-             12 hours
-           </option>
-           <option class="sib-menu__item" value="16">
-             24 hours
-           </option>
-           <option class="sib-menu__item" value="17">
-             36 hours
-           </option>
-           <option class="sib-menu__item" value="18">
-             2 days
-           </option>
-           <option class="sib-menu__item" value="19">
-             3 days
-           </option>
-           <option class="sib-menu__item" value="20">
-             4 days
-           </option>
-           <option class="sib-menu__item" value="21">
-             5 days
-           </option>
-           <option class="sib-menu__item" value="22">
-             6 days
-           </option>
-           <option class="sib-menu__item" value="23">
-             1 week
-           </option>
-           <option class="sib-menu__item" value="24">
-             2 weeks
-           </option>
-           <option class="sib-menu__item" value="25">
-             3 weeks
-           </option>
-           <option class="sib-menu__item" value="26">
-             1 month
-           </option>
-           <option class="sib-menu__item" value="27">
-             2 months
-           </option>
-           <option class="sib-menu__item" value="28">
-             3 months
-           </option>
-         </select>
-       </div>
-     </div>
-     <label class="entry__error entry__error--primary" style="font-size:14px; text-align:left; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
-     </label>
-     <label class="entry__specification" style="font-size:12px; text-align:left; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#363636;">
-       (e.g. 30 minutes)
-     </label>
-    <br><br>
-   </div>
- </div>
-</div>
-<div style="padding: 8px 0;">
- <div class="sib-input sib-form-block">
-   <div class="form__entry entry_block">
-     <div class="form__label-row ">
-       <label class="entry__label" style="font-size:14px; text-align:left; font-weight:700; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#999999;" for="EMAIL" data-required="*">
-         Email address:
-       </label>
-
-       <div class="entry__field">
-         <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="your@email.com" data-required="true" required />
-       </div>
-     </div>
-
-     <label class="entry__error entry__error--primary" style="font-size:14px; text-align:left; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
-     </label>
-   </div>
- </div>
-</div>
-<div style="padding: 8px 0;">
- <div class="sib-optin sib-form-block">
-   <div class="form__entry entry_mcq">
-     <div class="form__label-row ">
-       <div class="entry__choice">
-         <label>
-           <input type="checkbox" class="input_replaced" value="1" id="OPT_IN" name="OPT_IN" />
-           <span class="checkbox checkbox_tick_positive"></span><span style="font-size:14px; text-align:left; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#a8a8a8; background-color:transparent; "><p>I agree to receive your newsletters and accept the data privacy statement.</p></span>                    </label>
-
-       </div>
-     </div>
-     <label class="entry__error entry__error--primary" style="font-size:14px; text-align:left; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
-     </label>
-     <br>
-
-     <label class="entry__specification" style="font-size:12px; text-align:left; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#363636;">
-       You may unsubscribe at any time using the link in our newsletter.
-     </label>
-     
-   </div>
- </div>
-</div>
-<div style="padding: 8px 0;">
- <div class="sib-form__declaration">
-   <div class="declaration-block-icon">
-     <svg class="icon__SVG" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
-       <defs>
-         <symbol id="svgIcon-sphere" viewBox="0 0 63 63">
-           <path class="path1" d="M31.54 0l1.05 3.06 3.385-.01-2.735 1.897 1.05 3.042-2.748-1.886-2.738 1.886 1.044-3.05-2.745-1.897h3.393zm13.97 3.019L46.555 6.4l3.384.01-2.743 2.101 1.048 3.387-2.752-2.1-2.752 2.1 1.054-3.382-2.745-2.105h3.385zm9.998 10.056l1.039 3.382h3.38l-2.751 2.1 1.05 3.382-2.744-2.091-2.743 2.091 1.054-3.381-2.754-2.1h3.385zM58.58 27.1l1.04 3.372h3.379l-2.752 2.096 1.05 3.387-2.744-2.091-2.75 2.092 1.054-3.387-2.747-2.097h3.376zm-3.076 14.02l1.044 3.364h3.385l-2.743 2.09 1.05 3.392-2.744-2.097-2.743 2.097 1.052-3.377-2.752-2.117 3.385-.01zm-9.985 9.91l1.045 3.364h3.393l-2.752 2.09 1.05 3.393-2.745-2.097-2.743 2.097 1.05-3.383-2.751-2.1 3.384-.01zM31.45 55.01l1.044 3.043 3.393-.008-2.752 1.9L34.19 63l-2.744-1.895-2.748 1.891 1.054-3.05-2.743-1.9h3.384zm-13.934-3.98l1.036 3.364h3.402l-2.752 2.09 1.053 3.393-2.747-2.097-2.752 2.097 1.053-3.382-2.743-2.1 3.384-.01zm-9.981-9.91l1.045 3.364h3.398l-2.748 2.09 1.05 3.392-2.753-2.1-2.752 2.096 1.053-3.382-2.743-2.102 3.384-.009zM4.466 27.1l1.038 3.372H8.88l-2.752 2.097 1.053 3.387-2.743-2.09-2.748 2.09 1.053-3.387L0 30.472h3.385zm3.069-14.025l1.045 3.382h3.395L9.23 18.56l1.05 3.381-2.752-2.09-2.752 2.09 1.053-3.381-2.744-2.1h3.384zm9.99-10.056L18.57 6.4l3.393.01-2.743 2.1 1.05 3.373-2.754-2.092-2.751 2.092 1.053-3.382-2.744-2.1h3.384zm24.938 19.394l-10-4.22a2.48 2.48 0 00-1.921 0l-10 4.22A2.529 2.529 0 0019 24.75c0 10.47 5.964 17.705 11.537 20.057a2.48 2.48 0 001.921 0C36.921 42.924 44 36.421 44 24.75a2.532 2.532 0 00-1.537-2.336zm-2.46 6.023l-9.583 9.705a.83.83 0 01-1.177 0l-5.416-5.485a.855.855 0 010-1.192l1.177-1.192a.83.83 0 011.177 0l3.65 3.697 7.819-7.916a.83.83 0 011.177 0l1.177 1.191a.843.843 0 010 1.192z"
-             fill="#0092FF"></path>
-         </symbol>
-       </defs>
-     </svg>
-     <svg class="svgIcon-sphere" style="width:63px; height:63px;">
-       <use xlink:href="#svgIcon-sphere"></use>
-     </svg>
-   </div>
-   <p style="font-size:14px; text-align:left; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#999999; background-color:transparent;">
-     We use Sendinblue as our marketing platform. By Clicking below to submit this form, you acknowledge that the information you provided will be transferred to Sendinblue for processing in accordance with their
-     <a target="_blank" class="clickable_link"
-       href="https://www.sendinblue.com/legal/termsofuse/">terms of use</a>
-   </p>
- </div>
-
-</div>
-<div style="padding: 8px 0;">
- <div class="sib-form-block" style="text-align: left">
-   <button class="sib-form-block__button sib-form-block__button-with-loader buttonfade" style="font-size:13px; text-align:center; font-weight:700; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#dddddd; background-color:#1A1A1A; border-radius:8px; border-width:0px; width:160px;"
-     form="sib-form" type="submit">
-     <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512">
-       <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z"
-       />
-     </svg>
-     Request Invite
-   </button>
- </div>
-</div>
-
-<input type="text" name="email_address_check" value="" class="input--hidden">
-<input type="hidden" name="locale" value="en">
-</form>
-</div>
-</div>
-</div>
+            <div class="sib-form" style="text-align: center;
+            background-color: #000000;" >
+            <div id="sib-form-container" class="sib-form-container" >
+            <div id="error-message" class="sib-form-message-panel" style="font-size:14px; text-align:left; font-family: Michroma, UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:rgb(20,20,20); border-radius:12px; border-color:#ff4949;max-width:540px;">
+            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+            <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
+             <path d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z"
+             />
+            </svg>
+            <span class="sib-form-message-panel__inner-text">
+                             Your subscription could not be saved. Please try again.
+                         </span>
+            </div>
+            </div>
+            <div></div>
+            <div id="success-message" class="sib-form-message-panel" style="font-size:14px; text-align:left; font-family:Michroma, UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#085229; background-color:rgb(20, 20, 20); border-radius:12px; border-color:#13ce66;max-width:540px;">
+            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+            <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
+             <path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z"
+             />
+            </svg>
+            <span class="sib-form-message-panel__inner-text">
+                             Almost there. Please verify your email.
+                         </span>
+            </div>
+            </div>
+            <div></div>
+            <div id="sib-container" class="sib-container--large sib-container--vertical" style="text-align:center; background-color:#090909; max-width:540px; border-radius:17px; ">
+            <form id="sib-form" onsubmit="getTimezoneANDCheckRequiredFormInputs();" method="POST" action="https://2cc2e2bc.sibforms.com/serve/MUIEAN3R7k0jrqinMNO795EXhZASj4F_XVsMDFiESBE3AXq5CLn8BZzK2NbFzB7qQ4ve4-_bBr01G9lVOdWPdsVVRL2YlfAS6LmCHO-WCZV4rhlRpvz25JzHt1CLwh8rybFoR5EVMh-_6_wK_XVIaODzHCHH0yQHG_ALe8oXBSMIvXXIMleoOPvaNA6y9Z9ZQ7eu0k_2_-Md0Apy"
+            data-type="subscription">
+            <div style="padding: 8px 0;">
+             <div class="sib-form-block" style="font-size:21px; text-align:left; font-weight:700; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#d3d3d3; background-color:transparent; ">
+               <p>Request Invite</p>
+             </div>
+            </div>
+            <div style="padding: 8px 0;">
+             <div class="sib-select sib-form-block" data-required="true">
+               <div class="form__entry entry_block">
+                 <div class="form__label-row ">
+                   <label class="entry__label" id="iwant" style="font-size:14px; text-align:left; font-weight:700; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#999999;" for="USER_OR_DEVELOPER_OR_BOTH" data-required="*">
+                     I want:
+                   </label>
+                   <div class="entry__field">
+                     <select onkeyup="repeatedlyCheckInputsOfForm()" class="input" id="USER_OR_DEVELOPER_OR_BOTH" name="USER_OR_DEVELOPER_OR_BOTH" data-required="true" >
+                       <option value="" disabled selected hidden>Select one</option>
+            
+                       <option class="sib-menu__item" value="1">
+                         want my code debugged
+                       </option>
+                       <option class="sib-menu__item" value="2">
+                         want to get paid to debug
+                       </option>
+                       <option class="sib-menu__item" value="3">
+                         both
+                       </option>
+                     </select>
+                   </div>
+                 </div>
+                 <label class="entry__error entry__error--primary" style="font-size:14px; text-align:left; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
+                </label>
+               </div>
+             </div>
+            </div>
+            
+            <div style="padding: 8px 0;">
+                <br>
+            
+             <div class="sib-input sib-form-block">
+               <div class="form__entry entry_block">
+                 <div class="form__label-row ">
+                   <label class="entry__label" style="font-size:14px; text-align:left; font-weight:700; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#999999;" for="PROGRAMMING_LANGUAGES" data-required="*">
+                     Programming languages I most often use:
+                   </label>
+            
+                   <div class="entry__field">
+                     <input onkeyup="repeatedlyCheckInputsOfForm()" class="input" maxlength="200" type="text" id="PROGRAMMING_LANGUAGES" name="PROGRAMMING_LANGUAGES" autocomplete="off" placeholder="Python, Javascript, etc." data-required="true" required />
+                   </div>
+                 </div>
+            
+                 <label class="entry__error entry__error--primary" style="font-size:14px; text-align:left; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
+                 </label>
+                 <label class="entry__specification" style="font-size:12px; text-align:left; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#363636;">
+                   Must be comma-separated list (e.g. Python, Javascript, Haskell)
+                 </label>
+                 <br>
+                
+               </div>
+             </div>
+            </div>
+            
+            
+            <div style="padding: 8px 0;" id="hidden_form">
+              <div class="sib-input sib-form-block">
+                <div class="form__entry entry_block">
+                  <div class="form__label-row ">
+                    <label class="entry__label" style="font-size:14px; text-align:left; font-weight:700; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#999999;" for="IDEAL_EXPERIENCE">
+                      Please tell us your time zone (Optional)
+                    </label>
+             
+                    <div class="entry__field">
+                      <textarea rows="2" class="input" maxlength="500" id="IDEAL_EXPERIENCE" name="IDEAL_EXPERIENCE" autocomplete="off" placeholder="GMT -4"></textarea>
+                    </div>
+                  </div>
+             
+                  <label class="entry__error entry__error--primary" style="font-size:14px; text-align:left; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
+                  </label>
+                  <label class="entry__specification" style="font-size:12px; text-align:left; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#363636;">
+                    (e.g. GMT -4 etc.)
+                  </label>
+                  <br> 
+                </div>
+              </div>
+             </div>
+            
+            
+            <!-- Optional ideal experience form -->
+            <!-- <div style="padding: 8px 0;">
+              <div class="sib-input sib-form-block">
+                <div class="form__entry entry_block">
+                  <div class="form__label-row ">
+                    <label class="entry__label" style="font-size:14px; text-align:left; font-weight:700; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#999999;" for="IDEAL_EXPERIENCE">
+                      Anything you want to tell us? (Optional)
+                    </label>
+             
+                    <div class="entry__field">
+                      <textarea rows="2" class="input" maxlength="500" id="IDEAL_EXPERIENCE" name="IDEAL_EXPERIENCE" autocomplete="off" placeholder="I&#039;d be most interested in..."></textarea>
+                    </div>
+                  </div>
+             
+                  <label class="entry__error entry__error--primary" style="font-size:14px; text-align:left; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
+                  </label>
+                  <label class="entry__specification" style="font-size:12px; text-align:left; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#363636;">
+                    (e.g.  etc.)
+                  </label>
+                  <br> 
+                </div>
+              </div>
+             </div> -->
+            
+            
+            
+            
+            
+            
+            <div style="padding: 8px 0;">
+             <div class="sib-input sib-form-block">
+               <div class="form__entry entry_block">
+                 <div class="form__label-row ">
+                   <label class="entry__label" style="font-size:14px; text-align:left; font-weight:700; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#999999;" for="EMAIL" data-required="*">
+                     Email address:
+                   </label>
+            
+                   <div class="entry__field">
+                     <input onkeyup="getTimezoneANDCheckRequiredFormInputs();" class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="your@email.com" data-required="true" required />
+                   </div>
+                 </div>
+            
+                 <label class="entry__error entry__error--primary" style="font-size:14px; text-align:left; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
+                 </label>
+               </div>
+             </div>
+            </div>
+            <div style="padding: 8px 0;">
+             <div class="sib-optin sib-form-block">
+               <div class="form__entry entry_mcq">
+                 <div class="form__label-row ">
+                   <div class="entry__choice">
+                     <label>
+                       <input type="checkbox" class="input_replaced" value="1" id="OPT_IN" name="OPT_IN" />
+                       <span class="checkbox checkbox_tick_positive"></span><span style="font-size:14px; text-align:left; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#a8a8a8; background-color:transparent;"><p>I agree to receive your newsletters and accept the data privacy statement.</p></span>                    </label>
+            
+                   </div>
+                 </div>
+                 <label class="entry__error entry__error--primary" style="font-size:14px; text-align:left; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
+                 </label>
+                 <br>
+            
+                 <label class="entry__specification" style="font-size:12px; text-align:left; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#363636;">
+                   You may unsubscribe at any time using the link in our newsletter.
+                 </label>
+                 
+               </div>
+             </div>
+            </div>
+            <div style="padding: 8px 0;">
+             <div class="sib-form__declaration">
+               <div class="declaration-block-icon">
+                 <svg class="icon__SVG" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                   <defs>
+                     <symbol id="svgIcon-sphere" viewBox="0 0 63 63">
+                       <path class="path1" d="M31.54 0l1.05 3.06 3.385-.01-2.735 1.897 1.05 3.042-2.748-1.886-2.738 1.886 1.044-3.05-2.745-1.897h3.393zm13.97 3.019L46.555 6.4l3.384.01-2.743 2.101 1.048 3.387-2.752-2.1-2.752 2.1 1.054-3.382-2.745-2.105h3.385zm9.998 10.056l1.039 3.382h3.38l-2.751 2.1 1.05 3.382-2.744-2.091-2.743 2.091 1.054-3.381-2.754-2.1h3.385zM58.58 27.1l1.04 3.372h3.379l-2.752 2.096 1.05 3.387-2.744-2.091-2.75 2.092 1.054-3.387-2.747-2.097h3.376zm-3.076 14.02l1.044 3.364h3.385l-2.743 2.09 1.05 3.392-2.744-2.097-2.743 2.097 1.052-3.377-2.752-2.117 3.385-.01zm-9.985 9.91l1.045 3.364h3.393l-2.752 2.09 1.05 3.393-2.745-2.097-2.743 2.097 1.05-3.383-2.751-2.1 3.384-.01zM31.45 55.01l1.044 3.043 3.393-.008-2.752 1.9L34.19 63l-2.744-1.895-2.748 1.891 1.054-3.05-2.743-1.9h3.384zm-13.934-3.98l1.036 3.364h3.402l-2.752 2.09 1.053 3.393-2.747-2.097-2.752 2.097 1.053-3.382-2.743-2.1 3.384-.01zm-9.981-9.91l1.045 3.364h3.398l-2.748 2.09 1.05 3.392-2.753-2.1-2.752 2.096 1.053-3.382-2.743-2.102 3.384-.009zM4.466 27.1l1.038 3.372H8.88l-2.752 2.097 1.053 3.387-2.743-2.09-2.748 2.09 1.053-3.387L0 30.472h3.385zm3.069-14.025l1.045 3.382h3.395L9.23 18.56l1.05 3.381-2.752-2.09-2.752 2.09 1.053-3.381-2.744-2.1h3.384zm9.99-10.056L18.57 6.4l3.393.01-2.743 2.1 1.05 3.373-2.754-2.092-2.751 2.092 1.053-3.382-2.744-2.1h3.384zm24.938 19.394l-10-4.22a2.48 2.48 0 00-1.921 0l-10 4.22A2.529 2.529 0 0019 24.75c0 10.47 5.964 17.705 11.537 20.057a2.48 2.48 0 001.921 0C36.921 42.924 44 36.421 44 24.75a2.532 2.532 0 00-1.537-2.336zm-2.46 6.023l-9.583 9.705a.83.83 0 01-1.177 0l-5.416-5.485a.855.855 0 010-1.192l1.177-1.192a.83.83 0 011.177 0l3.65 3.697 7.819-7.916a.83.83 0 011.177 0l1.177 1.191a.843.843 0 010 1.192z"
+                         fill="#0092FF"></path>
+                     </symbol>
+                   </defs>
+                 </svg>
+                 <svg class="svgIcon-sphere" style="width:63px; height:63px;">
+                   <use xlink:href="#svgIcon-sphere"></use>
+                 </svg>
+               </div>
+               <p style="font-size:14px; text-align:left; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#999999; background-color:transparent;" >
+                 We use Sendinblue as our marketing platform. By Clicking below to submit this form, you acknowledge that the information you provided will be transferred to Sendinblue for processing in accordance with their
+                 <a target="_blank" class="clickable_link"
+                   href="https://www.sendinblue.com/legal/termsofuse/">terms of use</a>
+               </p>
+             </div>
+            
+            </div>
+            <div style="padding: 8px 0;"  ">
+             <div class="sib-form-block" style="text-align: left " id="requestinvitebutton">
+              <!-- onfocus="getTimezoneANDCheckRequiredFormInputs();" onmouseover="getTimezoneANDCheckRequiredFormInputs();" -->
+               <button class="sib-form-block__button sib-form-block__button-with-loader buttonfade" style="font-size:13px; text-align:center; font-weight:700; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif; color:#dddddd; background-color:#1A1A1A; border-radius:8px; border-width:0px; width:160px;"
+                 form="sib-form" type="submit">
+                 <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512">
+                   <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z"
+                   />
+                 </svg>
+                 Request Invite
+               </button>
+               
+            
+               <br><br>
+               <label class="bottom_error_message" style="font-size:14px; text-align:left; font-family:UlagadiSansRegular, Ulagadi Sans, Ulagadi Sans Regular, &quot;Helvetica&quot;, sans-serif;">
+                
+              Required field is empty
+              </label>
+               
+             </div>
+            </div>
+            
+            <input type="text" name="email_address_check" value="" class="input--hidden">
+            <input type="hidden" name="locale" value="en">
+            </form>
+            </div>
+            </div>
+            </div>
 <!-- END - We recommend to place the below code where you want the form in your website html  -->
 
             <!--OLD FORM BEGIN-->
@@ -809,7 +489,6 @@ data-type="subscription">
         </div>-->
         <br>
         <div id="footer"> 
-            <p class='michroma' style='font-size:11px; color:rgb(100, 100, 100);'>contact@bugufo.com</p>
 
             <svg class='since4079'>
 
@@ -845,6 +524,7 @@ data-type="subscription">
     </div>
 
 <footer>
+<input id="reftest" type="hidden" name="ref" value="">
 
 
 <!-- START - We recommend to place the below code in footer or bottom of your website html  -->
@@ -875,6 +555,7 @@ data-type="subscription">
   <!-- END - We recommend to place the above code in footer or bottom of your website html  -->
   <!-- End Sendinblue Form -->
 </footer>
+
 </body>
 </html>
 
