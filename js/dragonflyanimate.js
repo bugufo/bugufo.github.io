@@ -44,10 +44,10 @@ window.addEventListener('scroll', () => {
     if (frameIndex <= 0) {
         requestAnimationFrame(() => updateImage(1));
     }
-    if (frameIndex > 74) {
+    else if (frameIndex > 74) {
         requestAnimationFrame(() => updateImage(74));
     }
-    if (frameIndex < 74 && frameIndex >= 0) {
+    else if (frameIndex < 74 && frameIndex >= 0) {
     requestAnimationFrame(() => updateImage(frameIndex + 1));
 };
 
