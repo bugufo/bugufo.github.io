@@ -42,7 +42,7 @@ window.addEventListener('scroll', () => {
 
     // console.log(frameIndex);
     if (frameIndex <= 0) {
-        requestAnimationFrame(() => updateImage(0));
+        requestAnimationFrame(() => updateImage(1));
     }
     if (frameIndex > 74) {
         requestAnimationFrame(() => updateImage(74));
