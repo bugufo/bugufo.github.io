@@ -1,4 +1,4 @@
-
+(function () {
 const html = document.documentElement;
 const canvas = document.querySelector('.dragonflyanimation');
 const context = canvas.getContext('2d');
@@ -6,7 +6,7 @@ const context = canvas.getContext('2d');
 this.addEventListener("DOMContentLoaded", preloadImages, true);
  
 function preloadImages(e) {
-    var imageArray = new Array("dragonfly/dragonflyanimation0001_00000.jpg",
+    const imageArray = new Array("dragonfly/dragonflyanimation0001_00000.jpg",
     "dragonfly/dragonflyanimation0001_00001.jpg",
     "dragonfly/dragonflyanimation0001_00002.jpg",
     "dragonfly/dragonflyanimation0001_00003.jpg",
@@ -82,11 +82,11 @@ function preloadImages(e) {
     "dragonfly/dragonflyanimation0001_00073.jpg",
     "dragonfly/dragonflyanimation0001_00074.jpg");
  
-    for (var i = 0; i < imageArray.length; i++) {
-        var tempImage = new Image();
+    for (const i = 0; i < imageArray.length; i++) {
+        const tempImage = new Image();
         tempImage.src = imageArray[i];
-    }
-}
+    };
+};
 
 
 
@@ -99,26 +99,29 @@ const currentFrame = index => (
 
 
 )
-// console.log(currentFrame);
 
-const frameCount = 75
+
+const frameCount = 75;
 canvas.height = 600;
 canvas.width = 600;
-const img = new Image();
-img.src = currentFrame(0);
-img.onload = function(){
-    context.drawImage(img, 0, 0)
-}
+const dragonflyImage = new Image();
+dragonflyImage.src = currentFrame(0);
+dragonflyImage.onload = function(){
+    context.drawImage(dragonflyImage, 0, 0)
+};
+
 
 const updateImage = index => {
-    img.src = currentFrame(index);
-    context.drawImage(img, 0, 0);
-}
+    dragonflyImage.src = currentFrame(index);
+    context.drawImage(dragonflyImage, 0, 0);
+};
 
 window.addEventListener('scroll', () => {
+
+    
     const scrollTop = html.scrollTop;
     // console.log(scrollTop);
-    const maxScrollTop = html.scrollHeight - window.innerHeight;
+    const maxScrollTop = html.scrollHeight - window.pageYOffset;
     const scrollFraction = scrollTop / (maxScrollTop);
     const map = (value, x1, y1, x2, y2) => (value - x1) * (y2 - x2) / (y1 - x1) + x2;
     
@@ -142,4 +145,5 @@ window.addEventListener('scroll', () => {
     requestAnimationFrame(() => updateImage(frameIndex + 1));
 };
 
-})
+});
+})();
