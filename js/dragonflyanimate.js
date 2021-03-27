@@ -1,4 +1,4 @@
-(function () {
+
 const html = document.documentElement;
 const canvas = document.querySelector('.dragonflyanimation');
 const context = canvas.getContext('2d');
@@ -146,4 +146,3 @@ window.addEventListener('scroll', () => {
 };
 
 });
-})();
