@@ -137,7 +137,7 @@ window.addEventListener('scroll', () => {
     else if (frameIndex > 74) {
         requestAnimationFrame(() => updateImage(74));
     }
-    else if (frameIndex < 74 && frameIndex >= 0) {
+    else if (frameIndex < 74) {
     requestAnimationFrame(() => updateImage(frameIndex + 1));
 };
 
