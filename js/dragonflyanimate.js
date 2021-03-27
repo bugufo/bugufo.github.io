@@ -85,8 +85,8 @@ function preloadImages(e) {
     for (let i = 0; i < imageArray.length; i++) {
         const tempImage = new Image();
         tempImage.src = imageArray[i];
-    };
-};
+    }
+}
 
 
 
@@ -98,7 +98,7 @@ const currentFrame = index => (
     `dragonfly/dragonflyanimation0001_${index.toString().padStart(5, '0')}.jpg`
 
 
-)
+);
 
 
 const frameCount = 75;
@@ -107,7 +107,7 @@ canvas.width = 600;
 const dragonflyAnimationImage = new Image();
 dragonflyAnimationImage.src = currentFrame(0);
 dragonflyAnimationImage.onload = function(){
-    context.drawImage(dragonflyAnimationImage, 0, 0)
+    context.drawImage(dragonflyAnimationImage, 0, 0);
 };
 
 
@@ -126,7 +126,7 @@ window.addEventListener('scroll', () => {
     
     
 
-    const scrollFractionModified = map(scrollFraction, scrollTop, 4, maxScrollTop, 6)
+    const scrollFractionModified = map(scrollFraction, scrollTop, 4, maxScrollTop, 6);
 
     const frameIndex = Math.min(frameCount - 1, Math.floor(scrollFractionModified * frameCount));
 
@@ -139,7 +139,7 @@ window.addEventListener('scroll', () => {
     }
     else if (frameIndex < 74) {
     requestAnimationFrame(() => updateImage(frameIndex + 1));
-};
+}
 
 });
 })();
