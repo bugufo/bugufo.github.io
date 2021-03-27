@@ -8,7 +8,7 @@ const currentFrame = index => (
 
 
 )
-console.log(currentFrame);
+// console.log(currentFrame);
 
 const frameCount = 75
 canvas.height = 600;
@@ -26,7 +26,7 @@ const updateImage = index => {
 
 window.addEventListener('scroll', () => {
     const scrollTop = html.scrollTop;
-    console.log(scrollTop);
+    // console.log(scrollTop);
     const maxScrollTop = html.scrollHeight - window.innerHeight;
     const scrollFraction = scrollTop / (maxScrollTop);
     const map = (value, x1, y1, x2, y2) => (value - x1) * (y2 - x2) / (y1 - x1) + x2;
@@ -34,11 +34,21 @@ window.addEventListener('scroll', () => {
     
 
     //const scrollFractionModified = (scrollFraction-scrollTop)/(maxScrollTop-scrollTop) * ((0.44)-(0.17)) + (0.17)
-    const scrollFractionModified = map(scrollFraction, scrollTop, 3.6, maxScrollTop, 7.5)
-    console.log(scrollFraction);
-    console.log(scrollFractionModified);
+    const scrollFractionModified = map(scrollFraction, scrollTop, 3, maxScrollTop, 5)
+    // console.log(scrollFraction);
+    // console.log(scrollFractionModified);
     const frameIndex = Math.min(frameCount - 1, Math.floor(scrollFractionModified * frameCount));
 
 
-    requestAnimationFrame(() => updateImage(frameIndex + 1))
+    // console.log(frameIndex);
+    if (frameIndex <= 0) {
+        requestAnimationFrame(() => updateImage(0));
+    }
+    if (frameIndex > 74) {
+        requestAnimationFrame(() => updateImage(74));
+    }
+    if (frameIndex < 74 && frameIndex >= 0) {
+    requestAnimationFrame(() => updateImage(frameIndex + 1));
+};
+
 })
