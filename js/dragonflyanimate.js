@@ -93,6 +93,7 @@ function preloadImages(e) {
 
 
 
+
 const currentFrame = index => (
     `dragonfly/dragonflyanimation0001_${index.toString().padStart(5, '0')}.jpg`
 
