@@ -126,7 +126,7 @@ window.addEventListener('scroll', () => {
     
     
 
-    const scrollFractionModified = map(scrollFraction, scrollTop, 3, maxScrollTop, 5)
+    const scrollFractionModified = map(scrollFraction, scrollTop, 4, maxScrollTop, 6)
 
     const frameIndex = Math.min(frameCount - 1, Math.floor(scrollFractionModified * frameCount));
 
