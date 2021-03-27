@@ -1,4 +1,4 @@
-
+(function () {
 const html = document.documentElement;
 const canvas = document.querySelector('.dragonflyanimation');
 const context = canvas.getContext('2d');
@@ -120,21 +120,17 @@ window.addEventListener('scroll', () => {
 
     
     const scrollTop = html.scrollTop;
-    // console.log(scrollTop);
     const maxScrollTop = html.scrollHeight - window.pageYOffset;
     const scrollFraction = scrollTop / (maxScrollTop);
     const map = (value, x1, y1, x2, y2) => (value - x1) * (y2 - x2) / (y1 - x1) + x2;
     
     
 
-    //const scrollFractionModified = (scrollFraction-scrollTop)/(maxScrollTop-scrollTop) * ((0.44)-(0.17)) + (0.17)
     const scrollFractionModified = map(scrollFraction, scrollTop, 3, maxScrollTop, 5)
-    // console.log(scrollFraction);
-    // console.log(scrollFractionModified);
+
     const frameIndex = Math.min(frameCount - 1, Math.floor(scrollFractionModified * frameCount));
 
 
-    // console.log(frameIndex);
     if (frameIndex <= 0) {
         requestAnimationFrame(() => updateImage(1));
     }
@@ -146,3 +142,4 @@ window.addEventListener('scroll', () => {
 };
 
 });
+})();
