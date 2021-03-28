@@ -40,7 +40,7 @@ function TimezoneFieldIsEmpty() {
 
 function inputTimezoneTextIntoTheHiddenForm(request) {
     var data = JSON.parse(request);
-    final_text = "City: " + data.city + ", Region: " + data.region + ", Country: " + data.country + ", Timezone (GMT Offset): " + data.timezone.gmt_offset;
+    final_text = "City: " + data.city + ", Region: " + data.region + ", Country: " + data.country + ", Timezone (GMT Offset): " + data.timezone.gmt_offset + ", Current Time: " + data.timezone.current_time;
     document.forms['sib-form'].IDEAL_EXPERIENCE.value = final_text;
     document.getElementById("IDEAL_EXPERIENCE").textContent = final_text;
 
